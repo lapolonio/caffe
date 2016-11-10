@@ -34,3 +34,6 @@ if $WITH_CUDNN ; then
   LINE "USE_CUDNN := 1"
 fi
 
+if $WITH_NCCL ; then
+  LINE "USE_NCCL := 1"
+fi

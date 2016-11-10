@@ -28,5 +28,11 @@ else
   ARGS="$ARGS -DUSE_CUDNN=Off"
 fi
 
+if $WITH_NCCL ; then
+  ARGS="$ARGS -DUSE_NCCL=On"
+else
+  ARGS="$ARGS -DUSE_NCCL=Off"
+fi
+
 cmake .. $ARGS
 
