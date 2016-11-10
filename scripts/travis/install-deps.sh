@@ -23,6 +23,11 @@ if $WITH_CMAKE ; then
   apt-get install -y --no-install-recommends cmake
 fi
 
+if $WITH_NCCL ; then
+  git clone https://github.com/NVIDIA/nccl.git
+  cd nccl && make install 
+fi
+
 if ! $WITH_PYTHON3 ; then
   # Python2
   apt-get install -y --no-install-recommends \

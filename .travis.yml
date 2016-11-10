@@ -26,6 +26,7 @@ env:
     - BUILD_NAME="no-io-cmake" WITH_CMAKE=true WITH_IO=false
     - BUILD_NAME="cuda-cmake" WITH_CMAKE=true WITH_CUDA=true
     - BUILD_NAME="cudnn-cmake" WITH_CMAKE=true WITH_CUDA=true WITH_CUDNN=true
+    - BUILD_NAME="nccl-cudnn-cmake" WITH_NCCL=true WITH_CMAKE=true WITH_CUDA=true WITH_CUDNN=true
 
 cache:
   apt: true
