@@ -23,15 +23,6 @@ if $WITH_CMAKE ; then
   apt-get install -y --no-install-recommends cmake
 fi
 
-if $WITH_NCCL ; then
-  NCCL_DIR=~/nccl
-  rm -rf $NCCL_DIR
-  mkdir $NCCL_DIR
-  git clone https://github.com/NVIDIA/nccl.git $NCCL_DIR
-  cd $NCCL_DIR
-  make install 
-fi
-
 if ! $WITH_PYTHON3 ; then
   # Python2
   apt-get install -y --no-install-recommends \
@@ -112,3 +103,11 @@ if $WITH_CUDA ; then
   fi
 fi
 
+if $WITH_NCCL ; then
+  NCCL_DIR=~/nccl
+  rm -rf $NCCL_DIR
+  mkdir $NCCL_DIR
+  git clone https://github.com/NVIDIA/nccl.git $NCCL_DIR
+  cd $NCCL_DIR
+  make install 
+fi
